@@ -1,0 +1,23 @@
+### Live Photo 转换
+POST http://localhost:8080/api/livephoto/convert
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="photo"; filename="photo.jpg"
+Content-Type: image/jpeg
+
+< ./sample/photo.jpg
+--WebAppBoundary
+Content-Disposition: form-data; name="video"; filename="live.mov"
+Content-Type: video/quicktime
+
+< ./sample/live.mov
+--WebAppBoundary
+Content-Disposition: form-data; name="outputFormat"
+
+mp4
+--WebAppBoundary
+Content-Disposition: form-data; name="requestId"
+
+wx-demo-001
+--WebAppBoundary--
